@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+<style>
+    .errorlist{
+        color: red;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h3>Registro de usuario</h3><hr>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary">Registrarse como usuario</button>
+            </form>
+            <p> ¿Ya tiene una cuenta? <a href="{% url 'valhalla:customerlogin' %}">Acceda aquí</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

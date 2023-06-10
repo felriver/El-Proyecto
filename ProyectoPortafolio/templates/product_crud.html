@@ -1,0 +1,15 @@
+<h2>Agregar Producto</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Guardar</button>
+</form>
+
+<h2>Productos</h2>
+<ul>
+  {% for product in products %}
+    <li>{{ product.name }}</li>
+  {% empty %}
+    <li>No hay productos.</li>
+  {% endfor %}
+</ul>
